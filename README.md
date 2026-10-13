@@ -36,7 +36,7 @@ The app listens on `0.0.0.0`. Set `PORT` to change its listening port. The displ
 4. Set the exposed internal port to `3000`; set `PORT=3000` as a runtime variable if needed.
 5. For the demo, map host port `3001` to container port `3000` using `3001:3000`. Other applications must use a different host port or a hostname through the proxy.
 6. Set domain `http://demo.192.168.1.94.sslip.io` to test the Coolify proxy on the LAN. Public DNS resolving private addresses can be blocked on some networks; the direct LAN address avoids that dependency.
-7. Enable an HTTP health check at `/health` on port `3000` and deploy. The Docker image also provides its own health check.
+7. Enable an HTTP health check at `/health` on port `3000`, with the health check host set to `127.0.0.1`, and deploy. This keeps the check on IPv4, matching the app's listener. The Docker image also provides its own health check.
 8. Check build/runtime logs, then open `http://192.168.1.94:3001`. Verify `/health` and `/api/info` return HTTP 200 and the expected version.
 
 The dashboard is on `http://192.168.1.94:8000`. These addresses need access to the local network. This demo does not need a database and is suitable for a 256 MiB memory / 0.5 CPU limit; application workloads and build requirements vary.
