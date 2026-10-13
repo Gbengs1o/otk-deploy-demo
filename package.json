@@ -1,16 +1,19 @@
 {
-  "name": "express-hello-world",
+  "name": "otk-deploy-demo",
   "version": "1.0.0",
-  "description": "Express Hello World on Render",
+  "description": "OTK Deploy demo backend and developer welcome page, adapted from Render's MIT Express example",
   "main": "app.js",
-  "repository": "https://github.com/render-examples/express-hello-world",
-  "author": "Render Developers",
+  "author": "OTK; original example by Render Developers",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "dependencies": {
-    "express": "^5.0.0"
+    "express": "5.3.0"
   }
 }
