@@ -1,6 +1,6 @@
 {
   "name": "otk-deploy-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OTK Deploy demo backend and developer welcome page, adapted from Render's MIT Express example",
   "main": "app.js",
   "author": "OTK; original example by Render Developers",
