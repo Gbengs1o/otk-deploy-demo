@@ -4,6 +4,15 @@ A small Express backend and developer welcome page for the OTK team. This is a r
 
 Adapted from [render-examples/express-hello-world](https://github.com/render-examples/express-hello-world). The original Render Developers copyright and MIT license are preserved in [LICENSE](LICENSE). OTK added the interface, health API, guide, Dockerfile, and tests.
 
+## Public access
+
+- Dashboard: https://deploy.otkdeploy.app (sign in with your existing account).
+- Demo: https://demo.otkdeploy.app
+- Developer guide: https://demo.otkdeploy.app/guide
+- Health: https://demo.otkdeploy.app/health
+
+The public routes use Cloudflare Tunnel and work from any internet connection. The LAN addresses below remain useful for local maintenance.
+
 ## Endpoints
 
 | Route | Purpose |
@@ -45,11 +54,11 @@ The dashboard is on `http://192.168.1.94:8000`. These addresses need access to t
 
 Change the application code or package version, commit and push to `main`, and choose **Redeploy** in Coolify. Confirm the deployment commit and new release returned by `/health`. Leave `RELEASE_VERSION` unset if you want changes to the package version reflected automatically.
 
-Manual deployment from GitHub works with outbound connectivity. **Automatic deployment on pushes is pending a reachable GitHub webhook**, which will be configured after Cloudflare Tunnel exposes the dashboard hostname. Once configured, push another change and verify the resulting deployment starts automatically.
+Manual deployment from GitHub works. **Automatic deployment on pushes still requires configuring the GitHub App or a signed repository webhook.** The public webhook URL is now available at `https://deploy.otkdeploy.app/webhooks/source/github/events/manual`. Use the secret shown in the app's Webhooks settings. Once configured, push a change and verify that deployment starts automatically.
 
-## Tunnel follow-up
+## Adding another public app
 
-Configure a public dashboard hostname through the tunnel, update Coolify's instance URL, and set up the GitHub App or repository webhook using Coolify's generated configuration. Route each public app hostname to the Coolify proxy and preserve the hostname so it selects the app. Set the same public app domain in Coolify. Verify HTTPS and application endpoints from an external network.
+Set the app's public hostname in Coolify. Add that hostname as a Cloudflare published application route to `http://127.0.0.1:80`, leaving the HTTP Host Header override empty. Disable the app's origin HTTP-to-HTTPS redirect when using this HTTP tunnel origin. Verify public HTTPS and application endpoints. The existing tunnel currently has routes for the dashboard and this demo; a new hostname needs its own route.
 
 The tunnel is an external access step; this app does not configure tunnels, DNS, router rules, or Proxmox.
 

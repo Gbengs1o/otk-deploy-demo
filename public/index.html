@@ -21,7 +21,7 @@
         <a class="nav-item" href="/health"><span class="nav-icon" aria-hidden="true">⌁</span> Health endpoint <span class="nav-arrow" aria-hidden="true">↗</span></a>
         <a class="nav-item" href="/api/info"><span class="nav-icon" aria-hidden="true">{ }</span> Service API <span class="nav-arrow" aria-hidden="true">↗</span></a>
       </nav>
-      <div class="sidebar-bottom"><span class="dot amber"></span> LOCAL DEVELOPMENT <p>Built for the OTK team.<br>Powered by Coolify.</p></div>
+      <div class="sidebar-bottom"><span class="dot amber"></span> PUBLIC PREVIEW <p>Built for the OTK team.<br>Powered by Coolify.</p></div>
     </aside>
     <div class="workspace">
       <header class="topbar"><span>Workspace <span class="breadcrumb">/</span> <strong>Getting started</strong></span><span class="environment"><span class="dot"></span> Demo service</span></header>
@@ -41,7 +41,7 @@
         <section class="next-section" aria-labelledby="next-title"><div class="section-heading"><h2 id="next-title">Everything starts with a small deploy.</h2><span>01 — 03</span></div><div class="step-grid">
           <article class="step-card"><span class="step-number">01</span><h3>Bring your code</h3><p>Express, NestJS, Next.js, or a Dockerfile. Choose a GitHub repository and the branch you want to run.</p><a href="/guide#repository">Connect a repository <span aria-hidden="true">→</span></a></article>
           <article class="step-card"><span class="step-number">02</span><h3>Make it run</h3><p>Set the app port and environment variables. Coolify builds the image, starts the service, and keeps the logs close.</p><a href="/guide#configuration">Configure your app <span aria-hidden="true">→</span></a></article>
-          <article class="step-card"><span class="step-number">03</span><h3>Check. Then share.</h3><p>Test on the local network today. Public domains and GitHub webhook deployment follow when the tunnel is connected.</p><a href="/guide#verify">Verify your deployment <span aria-hidden="true">→</span></a></article>
+          <article class="step-card"><span class="step-number">03</span><h3>Check. Then share.</h3><p>Open your public app address, verify its health, and share it with your team. Manage each release from the dashboard.</p><a href="/guide#verify">Verify your deployment <span aria-hidden="true">→</span></a></article>
         </div></section>
         <section class="terminal-panel" aria-labelledby="try-title"><div><span class="eyebrow">TRY IT NOW</span><h2 id="try-title">A healthy backend<br>speaks for itself.</h2><p>The live health endpoint returns the release version,<br class="desktop-break"> uptime, and current service status.</p></div><div class="terminal"><div class="terminal-bar"><span class="terminal-dots">● ● ●</span><span>HTTP / JSON</span></div><pre><code><span class="code-muted">$</span> curl <span id="curl-origin">/health</span>
 
@@ -50,7 +50,7 @@
   <span class="code-key">"service"</span>: <span class="code-value">"otk-deploy-demo"</span>,
   <span class="code-key">"version"</span>: <span class="code-value" id="example-version">"…"</span>
 }</code></pre><a href="/health">Open the full response <span aria-hidden="true">↗</span></a></div></section>
-        <div class="notice"><span class="notice-symbol" aria-hidden="true">↗</span><p><strong>Local today. Public next.</strong> This demo proves the app deployment path. External access and automatic GitHub webhook deployment will be verified after Cloudflare Tunnel is connected.</p></div>
+        <div class="notice"><span class="notice-symbol" aria-hidden="true">↗</span><p><strong>Your app is live.</strong> This service is available globally through Cloudflare Tunnel. Use the <a href="https://deploy.otkdeploy.app">OTK Deploy dashboard</a> to manage deployments, logs and team access.</p></div>
         <footer><span>© OTK · Built to keep building.</span><span>Demo service · <a href="https://github.com/render-examples/express-hello-world" rel="noopener noreferrer">Adapted from Render’s MIT example</a></span></footer>
       </main>
     </div>
